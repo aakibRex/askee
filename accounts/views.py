@@ -14,7 +14,7 @@ def registration(request):
         email = request.POST['email']
         clg_name = request.POST['clgName']
         password1 = request.POST['password1']
-        password2 = request.POST['password2']
+
 
         user = users.objects.create_user(name=name, email=email, college_name=clg_name,
                                          password=password1)
