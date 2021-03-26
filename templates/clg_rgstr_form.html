@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+
+<head>
+    <meta charset="UTF-8">
+    <title>College Registration</title>
+</head>
+{%block content%}
+
+<form action="clgRegistration" method="post"> {% csrf_token %}
+  <div class="form-group">
+    <label for="clgName">College Name</label>
+    <input name="clgName" type="text" class="form-control" id="clgName"  placeholder="Enter College Name">
+
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{%endblock%}

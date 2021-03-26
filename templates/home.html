@@ -1,0 +1,47 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+
+
+<form action="{% url 'app:searchQnA' %}" method="post"> {% csrf_token %}
+<br><br>
+  <div align="center">
+  <label><h4>Select a college to get queries</h4></label>
+  </div>
+
+  <div class="input-group mb-3">
+
+
+  <select name="clgName" class="custom-select" id="inputGroupSelect02">
+    <option selected>Choose your college</option>
+    {%for clg in clg_names%}
+    <option value="{{clg.college_name}}">{{clg.college_name}}</option>
+    {% endfor %}
+  </select>
+  <div class="input-group-append">
+    <label class="input-group-text" for="inputGroupSelect02">Options</label>
+  </div>
+</div>
+<br><div align="center"><button type="submit" class="btn btn-dark">GO!</button></div>
+</form>
+{% if not user.is_authenticated %}
+<br><div align="center">
+<form action = "register_clg" method="get">
+  <button type="submit" class="btn btn-danger">Register Your clg</button>
+</form>
+</div>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

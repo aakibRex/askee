@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<br>
+
+
+{% for ans in answers %}
+<div>
+<ul>
+    <li><strong>{{ans.Qid.questions}}</strong>
+        <ul><li><h6>{{ans.answers}}</h6>
+
+                <a href="{% url 'nspace:delete_ans' ansid=ans.id %}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Delete</a>
+                <a href="{% url 'nspace:edit_ans' ansid=ans.id %}" class="btn btn-dark btn-lg active" role="button" aria-pressed="true">Edit</a></h5></a>
+
+        </li></ul>
+        <hr>
+    </li>
+</ul>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+
+<head>
+    <meta charset="UTF-8">
+    <title>QnAs</title>
+</head>
+{%block content%}
+<br>
+<div class="card">
+  <div class="card-body">
+      <h4><strong>{{Qs}}</strong></h4>
+      <br>
+      <h6> (ASKED BY-{{askedby}},{{desig}},{{clg}}) </h6>
+  </div>
+</div>
+<hr>
+{% for A in As %}
+
+    <div class="card">
+
+  <div class="card-header">
+     <strong> {{clg}}| (ANSWERED BY- {{A.ans_by_name}},{{A.desig}},{{ans_clg_name}}) </strong>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text">
+  </p>
+    {{A.answers}}<br>
+
+
+
+  </div>
+</div><br>
+
+{% endfor %}
+{%endblock%}

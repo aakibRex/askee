@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Answer Form</title>
+</head>
+{%block content%}
+
+<form action="/ansQues/{{qid}}/" method="post">
+    {% csrf_token %}
+      <div class="form-group">
+    <label for="askTextarea">Your Answer Here!</label>
+    <textarea name="ans" class="form-control" id="askTextarea" rows="3" cols="1"></textarea>
+  </div>
+
+
+ <br>
+
+         <div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Who you are</span>
+  </div>
+<input name="desig" type="text" aria-label="First name" class="form-control">
+
+</div><br> <br>
+
+     <div align="center"><button type="submit" class="btn btn-primary">Submit Answer</button></div>
+
+</form>
+
+{%endblock%}
