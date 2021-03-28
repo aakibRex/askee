@@ -25,10 +25,8 @@ def registration(request):
             auth.login(request, user)
             return redirect("/")
 
-        # return redirect("/")
     else:
         return render(request, 'registration.html', {'clg_names': clg_names})
-
 
 def login_user(request):
     if request.method == 'POST':
@@ -40,7 +38,7 @@ def login_user(request):
         if user is not None:
             auth.login(request, user)
             if 'next' in request.POST:
-                print(request.POST.get('next'))
+
                 return redirect(request.POST.get('next'))
             else:
                 return redirect("/")
@@ -57,9 +55,7 @@ def logout(request):
 
 def del_acc(request):
     if request.user.is_authenticated:
-        # print(request.user.name,request.user.id)
         user_id = request.user.id
         user = users.objects.filter(id=user_id)
-        # auth.logout(request)
         user.delete()
     return redirect("/")
