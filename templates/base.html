@@ -10,11 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Ask About College</title>
-      <script>
-function myFunction() {
-  return alert("Are you sure?");
-}
-</script>
+
   </head>
   <body>
  {% if not user.is_authenticated %}
@@ -49,7 +45,7 @@ function myFunction() {
                                 <div class="dropdown-menu">
                                   <a class="dropdown-item" href="{% url 'nspace:user_questions' %}">Question(s) asked</a>
                                   <a class="dropdown-item" href="{% url 'nspace:user_answers' %}">Answer(s) given</a>
-                                  <a class="dropdown-item" href="{% url 'nroute:delete_account' %}" onclick="myFunction()">Delete Account</a>
+                                  <a class="dropdown-item" href="{% url 'nroute:delete_account' %}">Delete Account</a>
                                 </div>
                           </li>
 
